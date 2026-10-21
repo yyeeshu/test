@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+:root { font-family: Tahoma, Arial, sans-serif; color-scheme: light; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; background: #f6f3fa; }
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+.icon-button { display: grid; height: 42px; width: 42px; place-items: center; border-radius: 12px; border: 1px solid #e9d5ff; color: #6b21a8; transition: .2s ease; }
+.icon-button:hover { background: #faf5ff; transform: translateY(-1px); }
+.calendar-cell { min-height: 76px; border-radius: 14px; padding: 6px; transition: .2s ease; }
+.calendar-cell:hover { background: #faf5ff; transform: translateY(-1px); }
+.day-number { display: grid; height: 25px; width: 25px; place-items: center; border-radius: 9px; font-size: 11px; font-weight: 700; }
+.visit-pill { width: 100%; overflow: hidden; border-radius: 7px; background: linear-gradient(90deg,#4c1d95,#7e22ce); padding: 3px 5px; text-align: left; font-size: 9px; font-weight: 700; color: white; transition: .2s ease; }
+.visit-pill:hover { filter: brightness(1.15); transform: scale(1.02); }
+.visit-card { width: 100%; border: 1px solid #ede9fe; border-radius: 18px; background: white; padding: 14px; box-shadow: 0 8px 20px rgba(59,7,100,.05); transition: .25s ease; animation: rise .45s both; }
+.visit-card:hover { transform: translateY(-3px); border-color: #c4b5fd; box-shadow: 0 14px 28px rgba(59,7,100,.11); }
+.date-tile { display: grid; min-width: 51px; place-items: center; border-radius: 13px; background: #2f0a5f; padding: 8px 6px; color: white; }
+.date-tile span { font-size: 18px; font-weight: 800; line-height: 1; }
+.date-tile strong { margin-top: 4px; font-size: 10px; text-transform: uppercase; color: #e9d5ff; }
+.modal-card { position: relative; width: 100%; max-width: 440px; border-radius: 26px; background: white; padding: 28px; box-shadow: 0 30px 90px rgba(32,5,56,.35); animation: pop .25s ease-out both; }
+@keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pop { from { opacity: 0; transform: scale(.96) translateY(8px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+@media (min-width: 640px) { .calendar-cell { min-height: 106px; padding: 8px; } .day-number { height: 28px; width: 28px; font-size: 12px; } .visit-pill { font-size: 10px; padding: 4px 6px; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
